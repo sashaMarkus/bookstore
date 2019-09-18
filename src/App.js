@@ -1,15 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Form from './Form';
 import BookList from './BookList';
-import Book from './Book';
+import Cart from './Cart';
 
 function App() {
+  const [num, setNum] = useState(100);
+
+  const changeNumEvent = (num) => {
+    setNum(num);
+  }
   return (
     <div>
       <h1>Book Store</h1>
-      <BookList />
-      <Book />
+      <Cart />
+      <Form changeNum = {changeNumEvent} num={num}/>
+      <BookList num={num}/>
     </div>
   );
 }

@@ -3,19 +3,21 @@ import Book from './Book';
 
 const booksObj = [];
 
-function BookList() {
+function BookList(props) {
 
-    const [myList, setMyList] = useState([]);
+    const [books, setBooks] = useState([]);
 
     fetch('https://kob-e.github.io/react-book-store/books-data/books.json').then((data) => {
         data.json().then(booksData => {
-            setMyList(booksData);
+            const filteredBooks = booksData.slice(0, props.num);
+            setBooks(filteredBooks);
         })
     })
+
     return (
         <div className="container">
-            {myList.map(singleBook => {
-                return <Book {...singleBook} />
+            {books.map(singleBook => {
+                return <Book {...singleBook} id={singleBook.key} />
             })
         }
 
