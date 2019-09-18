@@ -9,7 +9,7 @@ function Book(props) {
 
     const addToCart = () => {
         container.dispatch(ACTIONS.ADD, {
-            bookId: props.id
+            bookId: props.title
         })
     }
 
