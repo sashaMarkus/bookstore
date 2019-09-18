@@ -17,7 +17,7 @@ function Cart() {
     return (
         <>
             <h2>My Cart</h2>
-            <fieldset className="sideCard float-right border">
+            <fieldset className="sideCard float-right">
                 <legend className="text-center">My cart</legend>
                 <h3 className="text-center">items in cart</h3>
                 <ul>
