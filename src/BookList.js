@@ -17,10 +17,9 @@ function BookList(props) {
     return (
         <div className="container">
             {books.map(singleBook => {
-                return <Book {...singleBook} id={singleBook.key} />
+                return <Book {...singleBook} key={singleBook.id} id={singleBook.id} />
             })
-        }
-
+            }
         </div>
     )
 }
